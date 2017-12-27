@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="995.0" prefWidth="1004.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PocetnaController">
+    <tabs>
+        <Tab fx:id="pocetnaClicked" text="AES i RSA">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="966.0" prefWidth="1056.0">
+                    <children>
+                        <TextArea fx:id="txtOrginalni" layoutX="14.0" layoutY="392.0" prefHeight="216.0" prefWidth="400.0" />
+                        <TextArea fx:id="txtKriptirani" layoutX="579.0" layoutY="392.0" prefHeight="217.0" prefWidth="400.0" wrapText="true" />
+                        <Button fx:id="btnKriptiraj" layoutX="442.0" layoutY="392.0" mnemonicParsing="false" onAction="#btnKriptirajClicked" prefHeight="48.0" prefWidth="115.0" text="Kriptiraj &gt;&gt;" />
+                        <Button fx:id="btnDekriptiraj" layoutX="442.0" layoutY="440.0" mnemonicParsing="false" onAction="#btnDekriptirajClicked" prefHeight="48.0" prefWidth="115.0" text="&lt;&lt; Dekriptiraj " />
+                        <Text layoutX="14.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orginalni tekst" wrappingWidth="92.443359375">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <Text layoutX="579.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kriptirani tekst">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Text>
+                        <Button fx:id="btnUcitajClicked" layoutX="15.0" layoutY="620.0" mnemonicParsing="false" onAction="#btnUcitajClicked" prefHeight="44.0" prefWidth="82.0" text="Učitaj tekst" />
+                        <Button fx:id="btnSpremi" layoutX="117.0" layoutY="620.0" mnemonicParsing="false" onAction="#btnSpremiClicked" prefHeight="44.0" prefWidth="82.0" text="Spremi tekst" />
+                        <Button fx:id="btnUcitajKriptirani" layoutX="580.0" layoutY="620.0" mnemonicParsing="false" onAction="#btnUcitajKriptiraniClicked" prefHeight="44.0" prefWidth="133.0" text="Učitaj kriptirani tekst" />
+                        <TitledPane animated="false" layoutX="15.0" layoutY="14.0" prefHeight="98.0" prefWidth="969.0" text="Tajni ključ">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TextField fx:id="txtTajniKljuc" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="584.0" />
+                                        <Button fx:id="btnSpremiTajni" layoutX="634.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnSpremiTajniClicked" text="Spremi" />
+                                        <Button fx:id="btnUcitajTajni" layoutX="703.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnUcitajTajniClicked" text="Učitaj" />
+                              <Button fx:id="btnStvoriTajni" layoutX="764.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnStvoriTajniClicked" text="Generiraj" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="128.0" prefHeight="98.0" prefWidth="969.0" text="Javni ključ">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TextField fx:id="txtJavniKljuc" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="584.0" />
+                                        <Button fx:id="btnSpremiJavni" layoutX="634.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnSpremiJavniClicked" text="Spremi" />
+                                        <Button fx:id="btnUcitajJavni" layoutX="703.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnUcitajPrivatniJavniClicked" text="Učitaj" />
+                              <Button fx:id="btnStvoriJavni" layoutX="763.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnStvoriPrivatniJavniClicked" text="Generiraj" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TitledPane>
+                        <TitledPane animated="false" layoutX="15.0" layoutY="241.0" prefHeight="98.0" prefWidth="969.0" text="Privatni ključ">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <TextField fx:id="txtPrivatniKljuc" layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="584.0" />
+                                        <Button fx:id="btnSpremiPrivatni" layoutX="634.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnSpremiPrivatniClicked" text="Spremi" />
+                                        <Button fx:id="btnUcitajPrivatni" layoutX="703.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnUcitajPrivatniJavniClicked" text="Učitaj" />
+                              <Button fx:id="btnStvoriPrivatni" layoutX="766.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnStvoriPrivatniJavniClicked" text="Generiraj" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </TitledPane>
+                  <Label layoutX="478.0" layoutY="364.0" text="AES">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="478.0" layoutY="491.0" text="RSA">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnDekriptiraj1" layoutX="442.0" layoutY="511.0" mnemonicParsing="false" onAction="#btnDekriptirajClicked" prefHeight="48.0" prefWidth="115.0" text="&lt;&lt; Dekriptiraj " />
+                  <Button fx:id="btnKriptiraj1" layoutX="442.0" layoutY="511.0" mnemonicParsing="false" onAction="#btnKriptirajRSAClicked" prefHeight="48.0" prefWidth="115.0" text="Kriptiraj &gt;&gt;" />
+                  <Button fx:id="btnDekriptiraj2" layoutX="442.0" layoutY="559.0" mnemonicParsing="false" onAction="#btnDekriptirajRSAClicked" prefHeight="48.0" prefWidth="115.0" text="&lt;&lt; Dekriptiraj " />
+                    </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Sažetak">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="20.0" layoutY="14.0" />
+                  <Text layoutX="18.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orginalni tekst" wrappingWidth="92.443359375">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextArea fx:id="txtOrginalni1" layoutX="14.0" layoutY="56.0" prefHeight="216.0" prefWidth="400.0" wrapText="true" />
+                  <Button fx:id="btnUcitajClicked1" layoutX="16.0" layoutY="285.0" mnemonicParsing="false" onAction="#btnUcitajClicked" prefHeight="44.0" prefWidth="82.0" text="Učitaj tekst" />
+                  <Button fx:id="btnSpremi2" layoutX="106.0" layoutY="285.0" mnemonicParsing="false" onAction="#btnSpremiClicked" prefHeight="44.0" prefWidth="82.0" text="Spremi tekst" />
+                  <Text layoutX="501.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digitalni sažetak" wrappingWidth="109.443359375">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextArea fx:id="txtSazetak1" layoutX="496.0" layoutY="56.0" prefHeight="216.0" prefWidth="400.0" wrapText="true" />
+                  <Button fx:id="btnGenerirajSazetak" layoutX="496.0" layoutY="285.0" mnemonicParsing="false" onAction="#btnGenerirajSazetakClicked" prefHeight="44.0" prefWidth="82.0" text="Generiraj" />
+                  <Button fx:id="btnProvjeri" layoutX="589.0" layoutY="285.0" mnemonicParsing="false" onAction="#btnProvjeriSazetakClicked" prefHeight="44.0" prefWidth="82.0" text="Provjeri" />
+               </children></AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="Digitalni potpis">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnSpremi21" layoutX="106.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnSpremiClicked" prefHeight="44.0" prefWidth="82.0" text="Spremi tekst" />
+                  <Button fx:id="btnUcitajClicked11" layoutX="14.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnUcitajClicked" prefHeight="44.0" prefWidth="82.0" text="Učitaj tekst" />
+                  <TextArea fx:id="txtOrginalni11" layoutX="14.0" layoutY="33.0" prefHeight="216.0" prefWidth="400.0" wrapText="true" />
+                  <Text layoutX="14.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Orginalni tekst" wrappingWidth="92.443359375">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="456.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Digitalni potpis" wrappingWidth="106.443359375">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextArea fx:id="txtDigitalniPotpis" layoutX="456.0" layoutY="33.0" prefHeight="216.0" prefWidth="400.0" wrapText="true" />
+                  <TitledPane animated="false" layoutX="18.0" layoutY="313.0" prefHeight="98.0" prefWidth="969.0" text="Javni ključ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txtJavniKljuc1" layoutX="14.0" layoutY="14.0" onAction="#btnUcitajPrivatniJavniClicked1" prefHeight="27.0" prefWidth="584.0" />
+                              <Button fx:id="btnSpremiJavni1" layoutX="634.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnSpremiJavniClicked1" text="Spremi" />
+                              <Button fx:id="btnUcitajJavni1" layoutX="703.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnUcitajPrivatniJavniClicked1" text="Učitaj" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TitledPane>
+                  <TitledPane animated="false" layoutX="14.0" layoutY="424.0" prefHeight="98.0" prefWidth="969.0" text="Privatni ključ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="txtPrivatniKljuc1" layoutX="14.0" layoutY="14.0" onAction="#btnUcitajPrivatniJavniClicked1" prefHeight="27.0" prefWidth="584.0" />
+                              <Button fx:id="btnSpremiPrivatni1" layoutX="634.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnSpremiPrivatniClicked1" text="Spremi" />
+                              <Button fx:id="btnUcitajPrivatni1" layoutX="703.0" layoutY="15.0" mnemonicParsing="false" onAction="#btnUcitajPrivatniJavniClicked1" text="Učitaj" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TitledPane>
+                  <Button fx:id="btnGenerirajDigitalniPotpis" layoutX="456.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnGenerirajDigitalniPotpisClicked" prefHeight="44.0" prefWidth="86.0" text="Generiraj" />
+                  <Button fx:id="btnProvjeriDigitalniPotpis" layoutX="551.0" layoutY="257.0" mnemonicParsing="false" onAction="#btnProvjeriDigitalniPotpisClicked" prefHeight="44.0" prefWidth="86.0" text="Provjeri" />
+               </children></AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
